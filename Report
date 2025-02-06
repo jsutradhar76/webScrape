@@ -1,0 +1,31 @@
+Report on Approach, Challenges, and Improvements
+Approach
+The main goal of this project is to create a web application that fetches and displays upcoming events in Sydney, Australia. We achieved this by scraping event data from event websites and displaying it in an attractive format. The process is automated to run every 24 hours, ensuring that the event data is up-to-date.
+
+Technologies Used:
+
+Flask: Used for creating the backend API to fetch and serve event data.
+APScheduler: Used to schedule the periodic scraping of event websites.
+JavaScript: Used for fetching event data from the Flask API and dynamically displaying it on the webpage.
+HTML/CSS: Used for designing the frontend and making the webpage responsive.
+The events are scraped and stored in memory on the backend, then served via a Flask API. Users can click on the "GET TICKETS" button to enter their email address and get redirected to the event’s ticketing page.
+
+Challenges Faced
+Data Scraping and Format Handling: Scraping data from event websites can be tricky as the structure of the websites may vary. The event data must be normalized and cleaned before serving it on the website. Handling different formats from various websites was challenging, but it was solved by focusing on a structured approach for scraping common fields like title, date, and event link.
+
+Email Collection: Capturing the user’s email and ensuring smooth redirection to the ticket page required setting up the frontend modal to show up correctly, capture the email address, and then redirect users to the relevant URL. Ensuring proper user experience when entering the email was a bit tricky, but it was solved with simple JavaScript functions to manage the modal.
+
+Automation: Automating the scraping process every 24 hours using a task scheduler posed a challenge. I decided to implement the APScheduler in Flask for this purpose, which allowed me to run background tasks without needing a separate cron job or task manager.
+
+Cross-Origin Resource Sharing (CORS): Since the frontend and backend might be served from different origins during development, setting up CORS was necessary to ensure that the frontend can communicate with the backend without issues.
+
+Improvements
+Error Handling: One area that could be improved is error handling. If the backend fails to fetch events, we could provide a user-friendly error message or retry mechanism. This will improve the robustness of the application.
+
+Better Event Scraping: Currently, the scraping process is simple and static. It would be beneficial to add more complex logic to handle dynamic websites or various event sources, such as integrating with APIs from event platforms like Eventbrite or Meetup to fetch the events.
+
+Database Integration: Storing events in a database (like SQLite or MongoDB) rather than in memory would allow the data to persist between server restarts and provide more scalability in handling larger amounts of events.
+
+Frontend Enhancements: The frontend can be enhanced with more interactive features like filtering events by date, category, or location. Additionally, adding animations and improving mobile responsiveness would improve user experience.
+
+Email Verification: To ensure the email addresses entered are valid, an email verification process could be added before redirecting users to the ticket page.
