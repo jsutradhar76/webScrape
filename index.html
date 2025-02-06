@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydney Events</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎉 Discover Exciting Events! 🎭</h1>
+        <p>Stay updated with the latest events happening near you.</p>
+        <button id="scrapeBtn" class="scrape-btn">🔄 Fetch Latest Events</button>
+    </header>
+
+    <main>
+        <div id="events" class="events-grid"></div>
+    </main>
+
+    <!-- Email Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎟️ Get Your Tickets</h2>
+            <p>Enter your email to proceed</p>
+            <input type="email" id="email" placeholder="Enter your valid email">
+            <button onclick="subscribe()">Submit</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
