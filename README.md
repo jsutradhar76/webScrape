@@ -1,3 +1,4 @@
+use server.py to run
 # webScrape
 Sydney Events Web Scraper
 This project fetches and displays events happening in Sydney, Australia. The events are automatically scraped from event websites every 24 hours and listed on a webpage. Users can click on the "GET TICKETS" button to enter their email address and get redirected to the original event page for tickets.
